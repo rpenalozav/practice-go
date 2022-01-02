@@ -26,13 +26,6 @@ func (a Cow) Speak(){
     fmt.Println(a.speak)
 }
 
-func NewCow() Cow{
-    cow := Cow{}
-    cow.eat="grass"
-    cow.move="walk"
-    cow.speak="moo"
-    return cow
-}
 
 type Bird struct{
     eat string
@@ -49,11 +42,6 @@ func (a Bird) Move(){
 
 func (a Bird) Speak(){
     fmt.Println(a.speak)
-}
-
-func NewBird() Bird{
-    bird := Bird{eat: "worms", move: "fly", speak: "peep"}
-    return bird
 }
 
 type Snake struct{
@@ -74,11 +62,6 @@ func (a Snake) Speak(){
 }
 
 
-func NewSnake() Snake{
-    snake := Snake{eat:"mice", move: "slither", speak:"hsss"}
-    return snake
-}
-
 func main() {
     bd := make(map[string]Animal)
     var command,animal,action string
@@ -97,7 +80,7 @@ func main() {
                 case "speak":
                     a.Speak()
             }
-        }else if command == "query"{
+        }else if command == "newanimal"{
             var anim Animal
             switch action{
                 case "cow":

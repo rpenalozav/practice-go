@@ -1,22 +1,22 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
-func hi(value string){
-    fmt.Println(value)
+func hi(value string) {
+	fmt.Println(value)
 }
 
-func main(){
-    var wait string
+func main() {
+	var wait string
 
-    for i:=0; i<10;i++{
-        go hi("hello")
-        go hi("bye")
-    }
+	for i := 0; i < 10; i++ {
+		go hi("hello")
+		go hi("bye")
+	}
 
-    fmt.Scan(&wait)
+	fmt.Scan(&wait)
 
 }
 
